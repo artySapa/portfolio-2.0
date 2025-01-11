@@ -2,41 +2,12 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { Navigation } from '@/components/Navigation'
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background p-8 md:p-16 lg:p-24">
-      {/* Navigation */}
-      <nav className="fixed top-20 left-0 w-full flex justify-center items-center px-8 py-4 bg-background z-50">
-        <div className="flex items-center gap-64">
-          {/* Left Side */}
-          <div>
-            <Link href="/">
-              <h1 className="text-4xl font-bold tracking-tight">👨‍💻 arty</h1>
-            </Link>
-          </div>
-
-          {/* Right Side */}
-          <ul className="flex gap-8 text-sm text-red-500">
-            <li>
-              <Link
-                href="#work"
-                className="hover:text-red-400 transition-colors"
-              >
-                Work
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#projects"
-                className="hover:text-red-400 transition-colors"
-              >
-                Projects
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Main Content */}
       <main className="max-w-2xl mx-auto mt-24">
@@ -64,10 +35,12 @@ export default function Home() {
               In our hot summers I love playing soccer.
               </p>
             </div>
-            <div className='FIX HERE'>
+            <div className='flex flex-col'>
             <p className="text-muted-foreground">
               I am currently based in Los Angeles, California. 
             </p>
+            </div>
+            <div>
             <p className="text-muted-foreground">
               The most recent thing that I've been interested in is web3 technologies and blockchain.
             </p>
