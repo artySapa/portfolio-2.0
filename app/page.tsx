@@ -15,61 +15,87 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-8"
+          className="space-y-12"
         >
-          <div className="space-y-4">
-            <p className="text-xl font-bold text-muted-foreground">
-              Hi! My name is Artyom Sapa.
+          {/* Introduction */}
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-red-500">
+              Hi! I'm Artyom Sapa.
+            </h1>
+            <p className="text-xl text-foreground/80">
+              A software developer with a focus on user experience and clean code.
             </p>
-            <p className="text-muted-foreground">
-              I am a software developer focused on building products that combine elegant design with efficient functionality.
-            </p>
-            <div className="flex flex-col">
-            <p className="text-muted-foreground">
-              I am originally from Almaty, Kazakhstan.
-            </p>
-              <p className="text-muted-foreground ml-5">
-              In our cold winters I love snowboarding.
+          </div>
+
+          {/* Background */}
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-red-500/90">Past</h2>
+              <p className="text-foreground/70">
+                Originally from Almaty, Kazakhstan.
               </p>
-              <p className="text-muted-foreground ml-5">
-              In our hot summers I love playing soccer.
+              <div className="pl-4 border-l-2 border-red-500/20 space-y-2">
+                <p className="text-foreground/70">
+                  During our cold winters, I enjoyed snowboarding.
+                </p>
+                <p className="text-foreground/70">
+                  I loved playing soccer during the hot summers.
+                </p>
+              </div>
+              <p className="text-foreground/70">
+                Got enthusiastic about programming during high school.
+              </p>
+              <div className="pl-4 border-l-2 border-red-500/20 space-y-2">
+                <p className="text-foreground/70">
+                  Built robots to participate in state wide competitions.
+                </p>
+                <p className="text-foreground/70">
+                  Learned to code in Python for fun.
+                </p>
+              </div>
+              <p className="text-foreground/70">
+              Initially, I liked the idea of coding because I wanted to program command blocks in Minecraft.
               </p>
             </div>
-            <div className='flex flex-col'>
-            <p className="text-muted-foreground">
-              I am currently based in Los Angeles, California. 
-            </p>
-            </div>
-            <div>
-            <p className="text-muted-foreground">
-              The most recent thing that I've been interested in is web3 technologies and blockchain.
-            </p>
-            <p className="text-muted-foreground">
-              I am also interested in film and esports (Counter-Strike 2). 
-            </p>
+
+            {/* Current */}
+            <div className="space-y-3">
+              <h2 className="text-xl font-semibold text-red-500/90">Present</h2>
+              <p className="text-foreground/70">
+                Now based in Los Angeles, California.
+              </p>
+              <div className="pl-4 border-l-2 border-red-500/20 space-y-2">
+                <p className="text-foreground/70">
+                  Diving deep into web3 technologies and blockchain development.
+                </p>
+                <p className="text-foreground/70">
+                  When not coding, you'll find me analyzing CS2 strategies or watching romcoms.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="flex gap-4 pt-4 text-green-500">
+          {/* Social Links */}
+          <div className="flex gap-6 pt-4">
             <Link
               href="https://github.com/artysapa"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm px-4 py-2 rounded-full bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
               GitHub
             </Link>
             <Link
-              href="https://linkedin.com/in/artysapa"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              href="https://linkedin.com/in/sapartyom"
+              className="text-sm px-4 py-2 rounded-full bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
               LinkedIn
             </Link>
             <Link
-              href="mailto:contact@artysapa.dev"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              href="mailto:sapartyom@g.ucla.edu"
+              className="text-sm px-4 py-2 rounded-full bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors"
             >
               Email
             </Link>
