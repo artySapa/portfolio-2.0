@@ -10,6 +10,7 @@ interface ProjectCardProps {
   githubUrl?: string
   technologies: string[]
   highlights: string[]
+  videoUrl?: string
 }
 
 export function ProjectCard({
@@ -19,9 +20,11 @@ export function ProjectCard({
   liveUrl,
   githubUrl,
   technologies,
-  highlights
+  highlights,
+  videoUrl
 }: ProjectCardProps) {
   const [imageError, setImageError] = useState(false)
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
 
   return (
     <div className="group relative flex flex-col h-full p-6 rounded-lg border border-blue-500/20 hover:border-blue-500/40 transition-colors">
@@ -32,6 +35,8 @@ export function ProjectCard({
             src={image}
             alt={title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority
             className="object-cover transition-transform group-hover:scale-105"
             onError={() => setImageError(true)}
           />
@@ -91,6 +96,46 @@ export function ProjectCard({
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
+          )}
+          {videoUrl && (
+            <>
+              <button
+                onClick={() => setIsVideoModalOpen(true)}
+                className="flex items-center gap-1 px-3 py-1 bg-blue-200/50 rounded-full text-sm transition-colors"
+              >
+                Watch Demo
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </button>
+
+              {/* Video Modal */}
+              {isVideoModalOpen && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
+                    <div className="relative w-full max-w-4xl bg-background rounded-lg overflow-hidden">
+                    <button
+                        onClick={() => setIsVideoModalOpen(false)}
+                        className="absolute top-4 right-4 text-white hover:text-blue-500 z-10"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <div className="relative pt-[56.25%]">
+                        <video
+                        className="absolute inset-0 w-full h-full"
+                        src={videoUrl}
+                        controls
+                        autoPlay
+                        muted
+                        />
+                    </div>
+                    </div>
+                </div>
+                )}
+
+            </>
           )}
         </div>
       </div>
