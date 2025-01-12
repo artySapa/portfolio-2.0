@@ -99,6 +99,15 @@ export default function Home() {
             >
               Email
             </Link>
+            <Link
+              href="/assets/resume.pdf"
+              className="text-sm px-4 py-2 rounded-full bg-red-500/10 text-red-500 hover:bg-red-500/20 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Artyom_Sapa_Resume.pdf"
+            >
+              Resume
+            </Link>
           </div>
         </motion.div>
       </main>
